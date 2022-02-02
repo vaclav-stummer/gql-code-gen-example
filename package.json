@@ -1,0 +1,9 @@
+{
+  "name": "gql-code-gen-example",
+  "version": "0.1.0",
+  "description": "Full stack code gen starter",
+  "main": "",
+  "scripts": {},
+  "author": "Vaclav Stummer",
+  "license": "ISC"
+}

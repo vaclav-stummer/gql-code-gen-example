@@ -1,0 +1,30 @@
+version: "3.1"
+
+services:
+  db:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+
+  api:
+    env_file:
+      - ./api/.env
+    build: ./api
+    ports:
+      - 4000:4000
+    depends_on:
+      - db
+
+  admin:
+    env_file:
+      - ./frontend/.env
+    build:
+      context: ./frontend
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+      - api
